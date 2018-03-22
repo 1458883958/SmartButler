@@ -17,6 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--设置-->
+        <activity android:name=".ui.SettingActivity" android:label="@string/fab_setting"/>
     </application>
 
 </manifest>
