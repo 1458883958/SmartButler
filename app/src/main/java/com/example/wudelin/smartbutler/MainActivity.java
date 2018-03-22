@@ -16,6 +16,7 @@ import com.example.wudelin.smartbutler.fragment.GirlFragment;
 import com.example.wudelin.smartbutler.fragment.WeChatFragment;
 import com.example.wudelin.smartbutler.ui.SettingActivity;
 import com.example.wudelin.smartbutler.utils.Logger;
+import com.example.wudelin.smartbutler.utils.ShareUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setElevation(0);
         initData();
         initView();
+
     }
 
     //初始化控件

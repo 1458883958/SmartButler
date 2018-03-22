@@ -9,4 +9,9 @@ package com.example.wudelin.smartbutler.utils;
  */
 
 public class StaticClass {
+    //闪屏页延时
+    public static final int HANDLER_SPLASH = 1001;
+
+    //判断程序是否第一次运行
+    public static final String IS_RUNNING_FIRST = "isFirst";
 }
