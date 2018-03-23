@@ -4,4 +4,13 @@
     <string name="app_wechat">微信精选</string>
     <string name="app_girl">美女社区</string>
     <string name="app_center">个人中心</string>
+    <string name="string_login">登录</string>
+    <string name="string_reg">注册</string>
+    <string name="string_desc">这个人很懒，什么都没留下！</string>
+    <string name="reg_success">注册成功</string>
+    <string name="reg_defeat">注册失败</string>
+    <string name="et_nothing">输入框不能为空</string>
+    <string name="nconsistency_of_ciphers">密码不一致</string>
+
+
 </resources>

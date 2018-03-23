@@ -17,6 +17,7 @@ import com.example.wudelin.smartbutler.fragment.WeChatFragment;
 import com.example.wudelin.smartbutler.ui.SettingActivity;
 import com.example.wudelin.smartbutler.utils.Logger;
 import com.example.wudelin.smartbutler.utils.ShareUtils;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initData();
         initView();
 
+        //腾讯Bugly测试
+        //CrashReport.testJavaCrash();
     }
 
     //初始化控件
