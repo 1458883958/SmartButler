@@ -42,6 +42,8 @@
         <activity android:name=".ui.LoginActivity" android:label="@string/string_login"/>
         <!--注册-->
         <activity android:name=".ui.RegisteredActivity" android:label="@string/string_reg"/>
+        <!--修改密码-->
+        <activity android:name=".ui.UpdatedActivity" android:label="@string/forgot_password"/>
     </application>
 
 </manifest>

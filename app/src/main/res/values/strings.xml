@@ -10,7 +10,38 @@
     <string name="reg_success">注册成功</string>
     <string name="reg_defeat">注册失败</string>
     <string name="et_nothing">输入框不能为空</string>
-    <string name="nconsistency_of_ciphers">密码不一致</string>
-
-
+    <string name="username">账号</string>
+    <string name="password">密码</string>
+    <string name="age">年龄</string>
+    <string name="introduction">简介</string>
+    <string name="sex">性别</string>
+    <string name="man">男</string>
+    <string name="women">女</string>
+    <string name="splash">闪屏页</string>
+    <string name="go_to_homepage">进入主页</string>
+    <string name="enter_it_again">再次输入密码</string>
+    <string name="email">邮箱</string>
+    <string name="hint">注册成功需要前往邮箱验证，否则无法登录！</string>
+    <string name="remember_password">记住密码</string>
+    <string name="forgot_password">忘记密码</string>
+    <string name="updated_password">修改密码</string>
+    <string name="old_psw">旧密码</string>
+    <string name="new_psw">新密码</string>
+    <string name="reset_psw">请前往邮箱重置密码</string>
+    <string name="failed_to_send">发送失败</string>
+    <string name="inconsistency_of_ciphers">密码不一致</string>
+    <string name="failed_modified">修改失败</string>
+    <string name="successfully_modified">修改成功</string>
+    <string name="login_failed">登录失败</string>
+    <string name="email_activation">请前往邮箱激活</string>
+    <string name="text_now_login">正在登录..</string>
+    <string name="name">姓名:</string>
+    <string name="center_sex">性别:</string>
+    <string name="center_age">年龄:</string>
+    <string name="center_desc">简介:</string>
+    <string name="edit_user">编辑资料</string>
+    <string name="make_sure_to_modify">确定修改</string>
+    <string name="logistics_inquiry">物流查询</string>
+    <string name="attributive_inquiry">归属地查询</string>
+    <string name="logout">退出登录</string>
 </resources>

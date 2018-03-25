@@ -105,14 +105,14 @@ public class RegisteredActivity extends BaseActivity implements View.OnClickList
                                     ToastUtil.toast(RegisteredActivity.this,R.string.reg_success);
                                     finish();
                                 }else{
-                                    ToastUtil.toast(RegisteredActivity.this,R.string.reg_defeat);
+                                    ToastUtil.toastBy(RegisteredActivity.this,getString(R.string.reg_defeat)+e.toString());
                                 }
                             }
                         });
 
 
                     }else {
-                        ToastUtil.toast(this,R.string.nconsistency_of_ciphers);
+                        ToastUtil.toast(this,R.string.inconsistency_of_ciphers);
                     }
 
                 }else{

@@ -15,19 +15,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:hint="账号" />
+            android:hint="@string/username" />
 
         <EditText
             android:id="@+id/age_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="年龄" />
+            android:hint="@string/age" />
 
         <EditText
             android:id="@+id/desc_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="简介"
+            android:hint="@string/introduction"
             android:lines="2" />
 
         <RadioGroup
@@ -41,14 +41,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="男" />
+                android:text="@string/man" />
 
             <RadioButton
                 android:id="@+id/rb_girl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="女" />
+                android:text="@string/women" />
 
         </RadioGroup>
 
@@ -56,27 +56,27 @@
             android:id="@+id/password_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="密码"
+            android:hint="@string/password"
             android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/et_password_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="在输入一次"
+            android:hint="@string/enter_it_again"
             android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/email_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="邮箱"
+            android:hint="@string/email"
             android:inputType="textEmailAddress" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="注册成功需要前往邮箱验证，否则无法登录！"
+            android:text="@string/hint"
             android:textColor="@color/colorAccent"
             android:textSize="15sp" />
 
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_bg"
-            android:text="注册"
+            android:text="@string/string_reg"
             android:textColor="#fff" />
     </LinearLayout>
 

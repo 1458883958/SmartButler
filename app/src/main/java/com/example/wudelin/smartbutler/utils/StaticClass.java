@@ -20,4 +20,11 @@ public class StaticClass {
 
     //Bmob APP key
     public static final String BMOB_APP_ID = "db5bf43d85208c15099e2b16ba04dc8f";
+
+    //记住密码框状态
+    public static final String CHECK_REM_PASSWORD = "keep_password";
+    //用户名
+    public static final String USERNAME = "username";
+    //密码
+    public static final String PASSWORD = "password";
 }
