@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,11 +12,15 @@
             android:layout_width="match_parent"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/user_frgament_bg"
             android:layout_height="200dp">
-            <ImageView
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/add_pic"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/colorPrimary"/>
             <TextView
                 android:id="@+id/edit_user"
                 android:layout_marginTop="20dp"
@@ -100,11 +105,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/btn_logistics"
             android:text="@string/logistics_inquiry"
             android:layout_margin="15dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:alpha="0.5"
+            android:background="@color/colorPrimary"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/btn_attributive"
             android:text="@string/attributive_inquiry"
             android:layout_margin="15dp"/>
         <Button

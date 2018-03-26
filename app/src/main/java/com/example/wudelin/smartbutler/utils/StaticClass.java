@@ -27,4 +27,12 @@ public class StaticClass {
     public static final String USERNAME = "username";
     //密码
     public static final String PASSWORD = "password";
+
+    //聚合数据 快递APPKEY
+    public static final String JUHE_DATA_APPKEY = "9cb6eb84a7a0e0358f4fac19b17082fb";
+
+    //聚合数据 归属地APPKEY
+    public static final String Attributive_APPKEY = " 95a98c76cdea8f0452109df024fae9e7";
+
+
 }

@@ -44,6 +44,10 @@
         <activity android:name=".ui.RegisteredActivity" android:label="@string/string_reg"/>
         <!--修改密码-->
         <activity android:name=".ui.UpdatedActivity" android:label="@string/forgot_password"/>
+        <!--物流查询-->
+        <activity android:name=".ui.LogisticsActivity" android:label="@string/logistics_inquiry"/>
+        <!--归属地查询-->
+        <activity android:name=".ui.AttributiveActivity" android:label="@string/attributive_inquiry"/>
     </application>
 
 </manifest>

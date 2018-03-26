@@ -44,4 +44,15 @@
     <string name="logistics_inquiry">物流查询</string>
     <string name="attributive_inquiry">归属地查询</string>
     <string name="logout">退出登录</string>
+    <string name="camera">拍照</string>
+    <string name="photo">图库</string>
+    <string name="cancel">取消</string>
+    <string name="logistics_company">快递公司</string>
+    <string name="logistics_number">快递单号</string>
+    <string name="query">查询</string>
+    <string name="phone_number">手机号码</string>
+    <string name="phone_nothing">手机号码不能为空</string>
+
+
+
 </resources>

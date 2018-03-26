@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_company"
+        android:hint="@string/logistics_company"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_number"
+        android:inputType="number"
+        android:hint="@string/logistics_number"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_query"
+        android:background="@drawable/button_bg"
+        android:text="@string/query"
+        android:textColor="#fff"
+        />
+    <ListView
+        android:scrollbars="none"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/logisticsView"
+        android:layout_weight="1"/>
+
+</LinearLayout>
