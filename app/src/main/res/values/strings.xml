@@ -52,7 +52,9 @@
     <string name="query">查询</string>
     <string name="phone_number">手机号码</string>
     <string name="phone_nothing">手机号码不能为空</string>
-
+    <string name="send">发送</string>
+    <string name="length_exceeds_limit">长度超过限制</string>
+    <string name="please_enter_content">请输入内容</string>
 
 
 </resources>

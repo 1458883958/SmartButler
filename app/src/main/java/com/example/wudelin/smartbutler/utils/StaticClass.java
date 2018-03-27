@@ -34,5 +34,11 @@ public class StaticClass {
     //聚合数据 归属地APPKEY
     public static final String Attributive_APPKEY = " 95a98c76cdea8f0452109df024fae9e7";
 
+    //聚合数据 问答机器人APPKEY
+    public static final String Q_A_robot_APPKEY = " 7a48539921338ef90866922b21e25f6d";
+
+    //聚合数据 微信精选APPKEY
+    public static final String WECHAT_SELECT_APPKEY = " 78f723dccf85aea324a3cf0daac97f35";
+
 
 }

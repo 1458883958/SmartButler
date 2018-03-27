@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:gravity="center"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <ListView
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/chat_listView"
+        android:layout_height="0dp"/>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_butler"
-        android:textSize="30sp"/>
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ed_content"
+            android:hint="@string/please_enter_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:textColor="#fff"
+            android:background="@drawable/button_bg"
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_send"
+            android:text="@string/send"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
