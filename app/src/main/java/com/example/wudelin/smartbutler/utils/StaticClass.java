@@ -1,5 +1,6 @@
 package com.example.wudelin.smartbutler.utils;
 
+
 /**
  * 项目名：  SmartButler
  * 包名：    com.example.wudelin.smartbutler.utils
@@ -40,5 +41,6 @@ public class StaticClass {
     //聚合数据 微信精选APPKEY
     public static final String WECHAT_SELECT_APPKEY = " 78f723dccf85aea324a3cf0daac97f35";
 
-
+    //美女社区图片接口
+    public static final String GIRL_API = "http://gank.io/api/data/"+UtilTools.encode()+"/50/1";
 }

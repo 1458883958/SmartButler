@@ -3,11 +3,36 @@ package com.example.wudelin.smartbutler.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.wudelin.smartbutler.R;
+import com.example.wudelin.smartbutler.adapter.GirlAdapter;
+import com.example.wudelin.smartbutler.entity.GirlData;
+import com.example.wudelin.smartbutler.utils.Logger;
+import com.example.wudelin.smartbutler.utils.PicassoUtil;
+import com.example.wudelin.smartbutler.utils.StaticClass;
+import com.example.wudelin.smartbutler.view.CustomDialog;
+import com.github.chrisbanes.photoview.PhotoView;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
+import com.kymjs.rxvolley.RxVolley;
+import com.kymjs.rxvolley.client.HttpCallback;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 项目名：  SmartButler
@@ -18,10 +43,66 @@ import com.example.wudelin.smartbutler.R;
  */
 
 public class GirlFragment extends Fragment {
+    private List<GirlData> mList = new ArrayList<>();
+    private GridView gridView;
+    private GirlAdapter adapter;
+    //提示框
+    private CustomDialog dialog;
+    //预览图片
+    private PhotoView viewGirl;
+    private List<String> urlList = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_girl,null);
+        findView(view);
         return view;
     }
+
+    private void findView(View view) {
+        gridView = view.findViewById(R.id.grid_view);
+        //初始化预览弹窗
+        dialog = new CustomDialog(getActivity(), LinearLayout.LayoutParams.MATCH_PARENT
+                ,LinearLayout.LayoutParams.MATCH_PARENT,
+                R.layout.gril_photo,R.style.Theme_girl, Gravity.CENTER,R.style.pop_anim_style);
+        viewGirl = dialog.findViewById(R.id.girl_photo);
+
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //加载图片
+                PicassoUtil.loadDefault(getActivity(),
+                        urlList.get(position),viewGirl);
+                dialog.show();
+            }
+        });
+        RxVolley.get(StaticClass.GIRL_API, new HttpCallback() {
+            @Override
+            public void onSuccess(String t) {
+                Logger.d("girl",t);
+                pasringJson(t);
+            }
+        });
+    }
+
+    private void pasringJson(String t) {
+        try {
+            JSONObject jsonObject = new JSONObject(t);
+            JSONArray jsonArray = jsonObject.getJSONArray("results");
+            for (int i = 0; i <jsonArray.length() ; i++) {
+                JSONObject json = (JSONObject) jsonArray.get(i);
+                GirlData data = new GirlData();
+                String url = json.getString("url");
+                data.setImageUrl(url);
+                urlList.add(url);
+                mList.add(data);
+            }
+            adapter = new GirlAdapter(getActivity(),mList);
+            gridView.setAdapter(adapter);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

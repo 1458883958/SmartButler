@@ -3,9 +3,12 @@ package com.example.wudelin.smartbutler.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +16,9 @@ import android.widget.TextView;
 import com.example.wudelin.smartbutler.R;
 import com.example.wudelin.smartbutler.entity.SelectData;
 import com.example.wudelin.smartbutler.ui.WebViewActivity;
+import com.example.wudelin.smartbutler.utils.Logger;
+import com.example.wudelin.smartbutler.utils.PicassoUtil;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -28,12 +34,16 @@ public class SelectAdapter extends BaseAdapter{
     private Context mContext;
     private LayoutInflater inflater;
     private List<SelectData> mList;
-
+    private  WindowManager wm;
+    private int width;
     public SelectAdapter(Context mContext, List<SelectData> mList) {
         this.mContext = mContext;
         this.mList = mList;
         this.inflater = (LayoutInflater)
                 mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        width = wm.getDefaultDisplay().getWidth();
+
     }
 
     @Override
@@ -71,6 +81,11 @@ public class SelectAdapter extends BaseAdapter{
         final String url = data.getNewsUrl();
         viewHolder.tvTitle.setText(title);
         viewHolder.tvSource.setText(data.getSource());
+        //Logger.d("width:",""+screenWidth);
+        PicassoUtil.loadDIY(mContext,data.getImageUrl(),
+                R.mipmap.ic_launcher,R.mipmap.error,
+                width/3,300,
+                viewHolder.imageView);
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

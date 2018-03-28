@@ -60,8 +60,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         forgotPsd.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
         btnReg.setOnClickListener(this);
-        dialog = new CustomDialog(this,100,100,
-                R.layout.dialog_loading,R.style.Theme_Dialog,
+        dialog = new CustomDialog(this, 100, 100,
+                R.layout.dialog_loading, R.style.Theme_girl,
                 Gravity.CENTER,R.style.pop_anim_style);
         //屏幕外点击无效
         dialog.setCancelable(false);
