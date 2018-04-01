@@ -56,6 +56,9 @@
     <string name="length_exceeds_limit">长度超过限制</string>
     <string name="please_enter_content">请输入内容</string>
     <string name="welfare">福利</string>
-
-
+    <string name="default_text">你好,我是小杰！！</string>
+    <string name="tts_des">开启后可与管家进行语音对话</string>
+    <string name="tts">语音播报</string>
+    <string name="sms">智能短信提醒</string>
+    <string name="sms_des">开启之后收到短信将弹框提示</string>
 </resources>

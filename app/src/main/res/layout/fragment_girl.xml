@@ -6,6 +6,10 @@
     android:gravity="center"
     android:layout_height="match_parent">
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <GridView
         android:numColumns="2"
         android:id="@+id/grid_view"
@@ -13,5 +17,6 @@
         android:verticalSpacing="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

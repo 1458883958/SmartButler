@@ -3,6 +3,22 @@
     package="com.example.wudelin.smartbutler">
 
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!--短信权限-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!--窗口权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!--允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <!--读取手机信息权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!--外存储读权限，构建语法需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--配置权限，用来记录应用配置信息 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <!--允许联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!--获取GSM（2g）、WCDMA（联通3g）等网络状态的信息  -->
@@ -50,6 +66,8 @@
         <activity android:name=".ui.AttributiveActivity" android:label="@string/attributive_inquiry"/>
         <!--新闻详情-->
         <activity android:name=".ui.WebViewActivity"/>
+        <!--短信服务-->
+        <service android:name=".service.SmsService"/>
     </application>
 
 </manifest>

@@ -21,6 +21,8 @@ import com.example.wudelin.smartbutler.entity.User;
 import com.example.wudelin.smartbutler.ui.AttributiveActivity;
 import com.example.wudelin.smartbutler.ui.LoginActivity;
 import com.example.wudelin.smartbutler.ui.LogisticsActivity;
+import com.example.wudelin.smartbutler.ui.SettingActivity;
+import com.example.wudelin.smartbutler.utils.ShareUtils;
 import com.example.wudelin.smartbutler.utils.ToastUtil;
 import com.example.wudelin.smartbutler.view.CustomDialog;
 
@@ -133,6 +135,8 @@ public class CenterFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             //退出登录
             case R.id.logout:
+                ShareUtils.delValue(getActivity(),SettingActivity.TTS_CHECK);
+                ShareUtils.delValue(getActivity(),SettingActivity.SMS_CHECK);
                 //清除缓存用户对象
                 User.logOut();
                 // 现在的currentUser是null了
