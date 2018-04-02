@@ -61,4 +61,8 @@
     <string name="tts">语音播报</string>
     <string name="sms">智能短信提醒</string>
     <string name="sms_des">开启之后收到短信将弹框提示</string>
+    <string name="detection_version">检测版本</string>
+    <string name="version_des">检测是否有新版本提示下载</string>
+    <string name="latest_version">当前是最新版本</string>
+    <string name="download">下载更新</string>
 </resources>

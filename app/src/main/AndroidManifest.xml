@@ -41,6 +41,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.wudelin.smartbutler.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
         <activity android:name=".ui.SplashActivity" android:theme="@style/NoTitleFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -66,6 +75,8 @@
         <activity android:name=".ui.AttributiveActivity" android:label="@string/attributive_inquiry"/>
         <!--新闻详情-->
         <activity android:name=".ui.WebViewActivity"/>
+        <!--下载更新-->
+        <activity android:name=".ui.DownloadActivity" android:label="@string/download"/>
         <!--短信服务-->
         <service android:name=".service.SmsService"/>
     </application>

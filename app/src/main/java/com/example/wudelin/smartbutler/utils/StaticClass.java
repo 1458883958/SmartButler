@@ -49,4 +49,7 @@ public class StaticClass {
 
     //短信action
     public static final String SMS_ACTION = "android.provider.Telephony.SMS_RECEIVED";
+
+    //update url
+    public static final String UPDATE_URL = "http://172.25.41.51:8080/smwdl/config.json";
 }
