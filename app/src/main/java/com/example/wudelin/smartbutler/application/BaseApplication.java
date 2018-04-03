@@ -3,6 +3,7 @@ package com.example.wudelin.smartbutler.application;
 import android.app.Application;
 import android.content.Context;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.example.wudelin.smartbutler.utils.StaticClass;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
@@ -27,6 +28,7 @@ public class BaseApplication extends Application{
         //调试状态为true
         CrashReport.initCrashReport(getApplicationContext(), StaticClass.BUGLY_APP_ID, true);
 
+        SDKInitializer.initialize(getApplicationContext());
         //初始化Bmob
         Bmob.initialize(this,StaticClass.BMOB_APP_ID);
         // 将“12345678”替换成您申请的APPID，申请地址：http://www.xfyun.cn

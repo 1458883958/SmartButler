@@ -53,8 +53,6 @@ public class GirlFragment extends Fragment {
     //预览图片
     private PhotoView viewGirl;
     private List<String> urlList = new ArrayList<>();
-    private HashSet<String> setUrl = new HashSet<>();
-    private HashSet<GirlData> set = new HashSet<>();
     private SwipeRefreshLayout swipeRefreshLayout;
     @Nullable
     @Override
@@ -104,6 +102,8 @@ public class GirlFragment extends Fragment {
 
     private void pasringJson(String t) {
         try {
+            urlList.clear();
+            mList.clear();
             JSONObject jsonObject = new JSONObject(t);
             JSONArray jsonArray = jsonObject.getJSONArray("results");
             for (int i = 0; i <jsonArray.length() ; i++) {
@@ -111,11 +111,9 @@ public class GirlFragment extends Fragment {
                 GirlData data = new GirlData();
                 String url = json.getString("url");
                 data.setImageUrl(url);
-                setUrl.add(url);
-                set.add(data);
+                urlList.add(url);
+                mList.add(data);
             }
-            urlList.addAll(setUrl);
-            mList.addAll(set);
             adapter = new GirlAdapter(getActivity(),mList);
             gridView.setAdapter(adapter);
         } catch (JSONException e) {

@@ -8,12 +8,15 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/guide_strong"/>
+
     <TextView
+        android:id="@+id/tv_pager_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:text="three"/>
+        android:text="强大"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"/>
     <Button
         android:id="@+id/btn_start"
         android:text="@string/go_to_homepage"

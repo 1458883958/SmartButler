@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@mipmap/set"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,7 +11,8 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:background="#fff"
-        android:layout_height="60dp">
+        android:layout_marginTop="6dp"
+        android:layout_height="50dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -19,7 +21,7 @@
             android:orientation="vertical"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:text="@string/tts"
                 android:textColor="@color/colorPrimary"
                 android:layout_width="wrap_content"
@@ -44,10 +46,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:gravity="center_vertical"
         android:background="#fff"
-        android:layout_height="60dp">
+        android:layout_height="50dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -56,7 +58,7 @@
             android:orientation="vertical"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:text="@string/sms"
                 android:textColor="@color/colorPrimary"
                 android:layout_width="wrap_content"
@@ -81,10 +83,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:gravity="center_vertical"
         android:background="#fff"
-        android:layout_height="60dp">
+        android:layout_height="50dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -95,7 +97,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/tv_version"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:text="@string/detection_version"
                 android:textColor="@color/colorPrimary"
                 android:layout_width="wrap_content"
@@ -111,6 +113,138 @@
         </LinearLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:background="#fff"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ll_scan"
+            android:paddingLeft="15dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="16sp"
+                android:text="@string/scan"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:text="@string/scan_des"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:background="#fff"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ll_share"
+            android:paddingLeft="15dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="16sp"
+                android:text="@string/share_code"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:text="@string/share_des"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:background="#fff"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ll_location"
+            android:paddingLeft="15dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="16sp"
+                android:text="@string/location"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:text="@string/location_des"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:background="#fff"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ll_about"
+            android:paddingLeft="15dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="16sp"
+                android:text="@string/about"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:text="@string/about_des"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>

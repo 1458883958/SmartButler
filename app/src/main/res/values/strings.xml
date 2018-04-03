@@ -65,4 +65,12 @@
     <string name="version_des">检测是否有新版本提示下载</string>
     <string name="latest_version">当前是最新版本</string>
     <string name="download">下载更新</string>
+    <string name="share_code">分享</string>
+    <string name="share_des">将软件分享给朋友</string>
+    <string name="scan">扫一扫</string>
+    <string name="scan_des">扫描二维码或者条形码</string>
+    <string name="location">我的位置</string>
+    <string name="location_des">时刻掌握自身位置</string>
+    <string name="about">关于软件</string>
+    <string name="about_des">https://github.com/1458883958/SmartButler</string>
 </resources>

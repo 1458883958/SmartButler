@@ -29,9 +29,13 @@ import com.example.wudelin.smartbutler.utils.StaticClass;
 import com.example.wudelin.smartbutler.utils.ToastUtil;
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
+import com.xys.libzxing.zxing.activity.CaptureActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -51,11 +55,14 @@ public class SettingActivity extends BaseActivity  {
     //官方建议需要申请该权限时引导用户跳转到Setting中自己去开启权限开关
     //android.permission.SYSTEM_ALERT_WINDOW
     public static int OVERLAY_PERMISSION_REQ_CODE = 1234;
-
     //检测版本
     private TextView tvVersion;
     private LinearLayout linearLayout;
 
+    private LinearLayout ll_share;
+    private LinearLayout ll_scan;
+    private LinearLayout ll_location;
+    private LinearLayout ll_about;
     private String versionName;
     private int versionCode;
     private String apkUrl;
@@ -70,7 +77,34 @@ public class SettingActivity extends BaseActivity  {
         switchCompat = findViewById(R.id.switch_button);
         switch_Sms = findViewById(R.id.switch_sms);
         linearLayout = findViewById(R.id.ll_version);
-
+        ll_share = findViewById(R.id.ll_share);
+        ll_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,QcodeActivity.class));
+            }
+        });
+        ll_scan = findViewById(R.id.ll_scan);
+        ll_scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkCamera();
+            }
+        });
+        ll_location = findViewById(R.id.ll_location);
+        ll_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkLocation();
+            }
+        });
+        ll_about = findViewById(R.id.ll_about);
+        ll_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,AboutActivity.class));
+            }
+        });
         //检测更新
         /*
         * 1.请求服务器配置文件,拿到code
@@ -126,6 +160,49 @@ public class SettingActivity extends BaseActivity  {
             tvVersion.setText(getString(R.string.detection_version));
         }
 
+    }
+
+    private void checkLocation() {
+        List<String> permissionList = new ArrayList<>();
+        String [] needPermission = {Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        for (int i = 0; i < needPermission.length; i++) {
+            if(ContextCompat.checkSelfPermission(SettingActivity.this,
+                    needPermission[i])!=PackageManager.PERMISSION_GRANTED){
+                permissionList.add(needPermission[i]);
+            }
+        }
+        if(!permissionList.isEmpty()){
+            String []per = permissionList.toArray(new String[permissionList.size()]);
+            ActivityCompat.requestPermissions(SettingActivity.this,
+                    per ,2);
+        }else{
+            startLocation();
+        }
+    }
+
+    private void startLocation() {
+        startActivity(new Intent(SettingActivity.this,LocationActivity.class));
+    }
+
+    private void checkCamera() {
+        if(ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA},
+                    1);
+        }else{
+            startScan();
+        }
+
+    }
+
+    private void startScan() {
+        //打开扫描界面扫描条形码或二维码
+        Intent openCameraIntent = new Intent(SettingActivity.this,
+                CaptureActivity.class);
+        startActivityForResult(openCameraIntent, 0);
     }
 
     //解析
@@ -212,6 +289,26 @@ public class SettingActivity extends BaseActivity  {
                     ToastUtil.toastBy(this,"Permission Denied");
                 }
                 break;
+            case 1:
+                if(grantResults[0]==PackageManager.PERMISSION_GRANTED&&
+                        grantResults.length>0){
+                    startScan();
+                }else{
+                    ToastUtil.toastBy(this,"Permission Denied");
+                }
+                break;
+            case 2:
+                if(grantResults.length>0){
+                    for(int result:grantResults){
+                        if(result!=PackageManager.PERMISSION_GRANTED){
+                            ToastUtil.toastBy(this,"Permission Denied");
+                            return;
+                        }
+                    }
+                   startLocation();
+                }
+                break;
+
             default:break;
         }
     }
@@ -230,6 +327,11 @@ public class SettingActivity extends BaseActivity  {
                 ToastUtil.toastBy(this,"Permission Allowed");
                 permission();
             }
+        }
+        if (resultCode == RESULT_OK) {
+            Bundle bundle = data.getExtras();
+            String scanResult = bundle.getString("result");
+            ToastUtil.toastBy(this,scanResult);
         }
     }
 
